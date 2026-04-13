@@ -18,7 +18,7 @@ app.post('/api/persons', (request, response) => {
     const body = request.body;
 
     if(!body.name || !body.number){
-        response.status(400).json({
+        return response.status(400).json({
             error: 'the name or number required'
         })
     }
