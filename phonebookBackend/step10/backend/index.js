@@ -41,7 +41,7 @@ app.post('/api/persons', (request, response) => {
     response.json(newPerson);
 })
 
-app.delete('/api/persons/:id', (request,response)=> {
+app.delete('/api/persons/:id', () => {
     const id = Number(request.params.id);
     persons = persons.filter(p => p.id!==id);
 
