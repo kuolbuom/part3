@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "backend exercise step 9",
+  "description": "backend exercise step 10",
   "license": "ISC",
   "author": "Kuol Buom Patai",
   "type": "commonjs",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "morgan": "^1.10.1"
   }
 }
