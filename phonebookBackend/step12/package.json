@@ -1,0 +1,19 @@
+{
+  "name": "step12",
+  "version": "1.0.0",
+  "description": "phonebook backend exercise step 12",
+  "license": "ISC",
+  "author": "Kuol Buom Patai",
+  "type": "commonjs",
+  "main": "mongo.js",
+  "scripts": {
+    "start": "node mongo.js",
+    "dev": "node --watch mongo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}
