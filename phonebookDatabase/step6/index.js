@@ -57,11 +57,12 @@ app.post('/api/persons', (request, response, next) => {
             number: body.number,
         })
 
-        person.save().then(saved => {
-            response.json(saved)
-        })
+        person
+        .save()
+        .then(saved => response.json(saved))
+        .catch(error => next(error))
     })
-    .catch(error => next(error))
+    
 })
 
 app.delete('/api/persons/:id', (request, response, next)=> {
@@ -91,6 +92,22 @@ app.put('/api/persons/:id', (request, response, next) => {
     })
     .catch(error => next(error))
 })
+
+const errorHandler = (error, request, response, next) => {
+  console.error(error.message)
+
+  if (error.name === 'ValidationError') {
+    return response.status(400).json({ error: error.message })
+  }
+
+  if (error.name === 'CastError') {
+    return response.status(400).json({ error: 'malformatted id' })
+  }
+
+  next(error)
+}
+
+app.use(errorHandler)
 
 
 const PORT = process.env.PORT;
