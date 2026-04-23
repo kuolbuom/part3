@@ -120,8 +120,8 @@ const errorHandler = (error, request, response, next) => {
 
 app.use(errorHandler)
 
-const PORT = process.env.PORT
-// const PORT = process.env.PORT || 3001;
+
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, (request, response)=> {
     console.log(`Server in running on this port ${PORT}`);
 })
